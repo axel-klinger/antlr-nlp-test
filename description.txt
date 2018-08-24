@@ -1,0 +1,15 @@
+Der Baum steht in einem Garten.
+SUBJEKT PRÄDIKAT PRÄPOSITION DATIVOBJEKT // ORT?
+
+Der Mann geht in einen Garten.
+Der Mann geht in einem Garten. // s.o.
+SUBJEKT PRÄDIKAT PRÄPOSITION AKKUSATIVOBJEKT // RICHTUNG?
+
+der baum steht in einem garten.
+
+der | haus | steht | in | einem | garten | PUNKT
+
+der [ART:S,M,N],[ART:S,F,G],[ART:S,F,D],[ART:P,-,G],[RPN:S,M,N],[RPN:S,F,D],[DPN:S,M,N],[DPN:S,F,D]
+baum [SUB:S,M,N],[SUB:S,M,D],[SUB:S,M,A]
+steht [VER:3,S,IND,PRS,AKT],[VER:2,P,IND,PRS,AKT],[VER:2,P,IMP,PRS,AKT]
+in
