@@ -81,9 +81,3 @@ ihr
 könnt
 seid
 habt
-
-// alt. DB: Graphen -> Graph NN
-// W:  Graph NN, M, TypID (TID) oder ConceptID (CID)
-// WF: Graph S_N -> NN Graph
-// WF: Graphen S_G, S_D, S_A, P_N, P_G, P_D, P_A -> NN Graph
-// => Wortformen generieren (s.o.)
