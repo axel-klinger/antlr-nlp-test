@@ -2,6 +2,8 @@
 
 Ein einfacher Parser für die deutsche Sprache (und EN, ES, ...) auf der Basis von ANTLR4. Es wird zunächst auf weitere Bibliotheken verzichtet. Tokenizer und andere Tools können bei Bedarf einfach durch stärkere, externe Tools ersetzt werden.
 
+* Sprache: Java 8+
+
 ## Arbeitspakete
 
 ### Wörterbuch DE, EN, ES, ...
