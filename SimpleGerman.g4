@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-grammar test;
+grammar SimpleGerman;
 
 text: satz+;
 satz: frage | aussage | aufforderung;
