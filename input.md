@@ -1,1 +1,1 @@
-Ein Graph ist ein Gebilde aus Knoten und Kanten. Er kann gerichtet oder ungerichtet sein.
+ein Graph ist ein Gebilde aus Knoten und Kanten. er kann gerichtet oder ungerichtet sein.
