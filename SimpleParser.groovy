@@ -17,9 +17,9 @@ sentences.each { s ->
 
   println "b) TAG"
   def altSentences = tag(s,dictionary)
-  altSentences.each { x ->
-    println x
-  }
+  // altSentences.each { x ->
+  //   println x
+  // }
 
   println "c) PARSE ALL POSSIBLE COMINATIONS AND PRINT ALL VALID SENTENCSES"
   // def parsedSentences = parse(altSentences)
@@ -48,15 +48,11 @@ def tokenize(sentence) {
   return sentence.trim().split(' ')
 }
 
-// "ich bin" -> "[ich_PRPERS bin_VA, ich_XXX bin_VA]"
-// dict + sent -> [sa, sb, sc]
 def tag(sentence, dictionary) {
   def altSentences = [] as List
   def words = tokenize(sentence)
   def taggedWords = []
-  // für jedes Wort x Worte mit Form erzeugen
   words.each { w ->
-    // println w
     def wfs = dictionary.get(w).split(',')  // [ART,ADV]
     def taggedWord = []
     wfs.each { wf ->
@@ -70,42 +66,29 @@ def tag(sentence, dictionary) {
     counterForAllWords[i] = 0
   }
 
-  // 18x (n1 x n2 x n3 x ... x nX) Satz aufbauen ...
   def newSentence = ''
-
-/*
-  sx
-  w1.each form w1x
-    wordindex ++
-    sx += w1x + rest(w wordIndex)
-    wordindex --
-
-  rest(nextTaggedWord) {
-    if (wordindex = taggedwords.size()) {
-      return
-    }
-    ...
-  }
-
-*/
-
-
-
-
-  // feedSentence
-    // fill and add new sentence!
+  def counter = 0
+  nextWord(taggedWords[counter], counter, taggedWords, altSentences, newSentence)
   println taggedWords
 
-
-  // for (int i = 0; i<words.size(), i++) {
-  //   taggedWords[i].each { t ->
-  //
-  //   }
-  //
-  // }
-
-
   return altSentences // als Strings
+}
+
+def nextWord(taggedWord, counter, taggedWords, altSentences, newSentence) {
+  counter++
+  def originalNewSentence = newSentence
+  taggedWord.each { tag ->
+    newSentence += ' ' + tag
+    if (counter<taggedWords.size()) {
+      nextWord(taggedWords[counter], counter, taggedWords, altSentences, newSentence)
+    } else {
+      newSentence = newSentence.trim()
+      altSentences.add(newSentence)
+      println newSentence
+      newSentence = ''
+    }
+    newSentence = originalNewSentence
+  }
 }
 
 def parse(altSentences) {
