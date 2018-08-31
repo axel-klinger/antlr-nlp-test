@@ -12,16 +12,32 @@ frage: vp np FRAGEZEICHEN;
 aussage: np vp PUNKT;
 aufforderung: vp AUSRUFEZEICHEN;
 
-np: ART NN | NE;
-vp: VVFIN np?;
+pp: PRP np;
+adj: ADJ (',' ADJ)*;
+np: n (',' n)* (CON n)?;
+n: ART? adj? NN pp? | NE;
+vp: VV np?;
 // np: ART NN | NE; // object = subject
+
+fragment WORD : ([a-z] | [A-Z])+;
+
+PR: WORD '_PRPERS' | WORD '_PRDEM';
+
+NE: WORD '_NE';
+NN: WORD '_NN';
+ART: WORD '_ART';
+ADJ: WORD '_ADJ';
+ADV: WORD '_ADV';
+VV: WORD '_VV' | WORD '_VA';
+CON: WORD '_CON';
+PRP: WORD '_PRP';
 
 PUNKT: '.';
 FRAGEZEICHEN: '?';
 AUSRUFEZEICHEN: '!';
 WS : [ \t\r\n]+ -> skip ;
 
-
+/*
 ADJA:   'große' | 'kleine'; // [das] große [Haus]	// attributives Adjektiv
 ADJD:   'schnell'; //	[er fährt] schnell, [er ist] schnell	// adverbiales oder prädikatives Adjektiv
 
@@ -92,7 +108,7 @@ VMFIN:	'dürfen';	// finites Verb, modal
 VMINF:	'wollen';	// Infinitiv, modal
 VMPP:	  'gekonnt';  //, [er hat gehen] können	// Partizip Perfekt, modal
 		//
-XY:	'3:7' | 'H2O' | 'D2XW3';	// Nichtwort, Sonderzeichen enthaltend
+XY:	'3:7' | 'H2O' | 'D2XW3';	// Nichtwort, Sonderzeichen enthaltend */
 		//
 /* $,	,	// Komma
 $.	. ? ! ; :	// Satzbeendende Interpunktion
