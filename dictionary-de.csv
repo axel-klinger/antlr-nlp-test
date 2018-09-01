@@ -12,8 +12,8 @@ Knoten;NN:Knoten:M
 der;ART
 die;ART
 das;ART
-gerichtet;ADJ
-ungerichtet;ADJ
+gerichtet;PART
+ungerichtet;PART
 kann;VA:können
 oder;CON
 und;CON

@@ -1,1 +1,1 @@
-ein_ARTUB Graph_NN ist_VA ein_ARTUB Gebilde_NN aus_PRP Knoten_NN und_CON Kanten_NN. er_PRPERS kann_VA gerichtet_ADJ oder_CON ungerichtet_ADJ sein_VA.
+ein_ARTUB Graph_NN ist_VA ein_ARTUB Gebilde_NN aus_PRP Knoten_NN und_CON Kanten_NN. er_PRPERS kann_VA gerichtet_PART oder_CON ungerichtet_PART sein_VA.

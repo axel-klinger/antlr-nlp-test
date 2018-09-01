@@ -1,4 +1,7 @@
 
+import org.antlr.v4.runtime.*
+import org.antlr.v4.runtime.tree.*
+
 // read input file
 def text = new File('input.md').text
 def dictionary = loadDictionary('de')
@@ -17,9 +20,14 @@ sentences.each { s ->
 
   println "b) TAG"
   def altSentences = tag(s,dictionary)
-  // altSentences.each { x ->
-  //   println x
-  // }
+
+  println ""
+  println "c) PARSE"
+  altSentences.each { a ->
+    println a
+    parse(a + '.')    // DUMMY (.) !!!
+    println ""
+  }
 
   println "c) PARSE ALL POSSIBLE COMINATIONS AND PRINT ALL VALID SENTENCSES"
   // def parsedSentences = parse(altSentences)
@@ -91,8 +99,14 @@ def nextWord(taggedWord, counter, taggedWords, altSentences, newSentence) {
   }
 }
 
-def parse(altSentences) {
-  return altSentences
+def parse(sentence) {
+  ANTLRInputStream input = new ANTLRInputStream(sentence)
+  SimpleGermanLexer lexer = new SimpleGermanLexer(input)
+  CommonTokenStream tokens = new CommonTokenStream(lexer)
+  SimpleGermanParser parser = new SimpleGermanParser(tokens)
+  ParseTree tree = parser.satz()
+  println tree.toStringTree(parser)
+  return sentence
 }
 
 def loadDictionary(language) {

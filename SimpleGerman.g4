@@ -15,9 +15,11 @@ aufforderung: vp AUSRUFEZEICHEN;
 pp: PRP np;
 adj: ADJ (',' ADJ)*;
 np: n (',' n)* (CON n)?;
-n: ART? adj? NN pp? | NE;
-vp: VV np?;
+n: ART? adj? NN pp? | NE | PR;
+vp: VV np? | VV part VV;
+// v: VV | VA
 // np: ART NN | NE; // object = subject
+part: PART (CON PART)?;
 
 fragment WORD : ([a-z] | [A-Z])+;
 
@@ -25,12 +27,13 @@ PR: WORD '_PRPERS' | WORD '_PRDEM';
 
 NE: WORD '_NE';
 NN: WORD '_NN';
-ART: WORD '_ART';
+ART: WORD '_ART' | WORD '_ARTUB';
 ADJ: WORD '_ADJ';
 ADV: WORD '_ADV';
 VV: WORD '_VV' | WORD '_VA';
 CON: WORD '_CON';
 PRP: WORD '_PRP';
+PART: WORD '_PART';
 
 PUNKT: '.';
 FRAGEZEICHEN: '?';
