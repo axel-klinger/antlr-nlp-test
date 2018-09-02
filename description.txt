@@ -13,3 +13,32 @@ der [ART:S,M,N],[ART:S,F,G],[ART:S,F,D],[ART:P,-,G],[RPN:S,M,N],[RPN:S,F,D],[DPN
 baum [SUB:S,M,N],[SUB:S,M,D],[SUB:S,M,A]
 steht [VER:3,S,IND,PRS,AKT],[VER:2,P,IND,PRS,AKT],[VER:2,P,IMP,PRS,AKT]
 in
+
+* mit Wortarten und Satzteilen
+  * N // Objekt
+  * NP // Objekt Phrase
+  * NN // Klasse (TypID)
+  * NE // Instanz
+  * ART // bestimmter Artikel
+  * ARTUB // unbestimmter Artikel
+  * ADJ // Adjektiv
+  * ADV // Adverb
+  * ADVLOC // Adverbiale Bestimmung des Ortes
+  * ADVTIM // Adverbiale Bestimmung der Zeit
+  * ADVKIN // Adverbiale Bestimmung der Art und Weise
+  * V // Verb
+  * VP // Verbal Phrase
+  * VPART //  Partizip (X?)
+  * CON // Konjunktion
+  * PR // Pronomen
+  * PP // Pronominal Phrase
+  * PRPER // Personalpronomen
+  * PRIND // Indefinitpronomen
+  * PRPOS // Possessivpronomen
+  * PRREF // Reflexivpronomen
+  * PRDEM // Demonstrativpronomen
+  * PRINT // Interrogativpronomen
+  * PRREL // Relativpronomen
+  * PRREZ // Reziprogpronomen
+  * [PREP // Repräsentativpronomen] ???
+* Regeln: ... // Satz-Umstellungen berücksichtigen SUB P DAT | DAT P SUB
