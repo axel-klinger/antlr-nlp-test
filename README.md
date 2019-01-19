@@ -4,6 +4,19 @@ Ein einfacher Parser für die deutsche Sprache (und EN, ES, ...) auf der Basis v
 
 * Sprache: Java 8+
 
+Generate Lexer and Parser
+
+Download antlr-4.7.1-complete.jar and place it for example in /usr/local/llib
+
+Run the example
+```
+export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
+java -Xmx500M org.antlr.v4.Tool SimpleGerman.g4
+javac SimpleGerman*.java
+groovy SimpleParser.groovy
+```
+
+
 ## Arbeitspakete
 
 Die nächsten Schritte ...
